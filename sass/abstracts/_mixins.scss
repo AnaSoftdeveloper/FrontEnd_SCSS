@@ -1,0 +1,44 @@
+@mixin clearfix{
+  &::after {
+    content:"";
+    clear:both;
+    display: table;
+  }
+}
+  @mixin absCenter {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  }
+
+
+  // MEDIA QUERY MANAGER
+
+  // 0-600px phone
+  // 600-900 Tablet portrait
+  //1200-1800 is where normal styles apply
+  //1800px+  big desktop
+
+//Order: Base + typography > general layout + grid > page layout > components
+
+
+  //1em = 16px
+  //For Media query, it is better to use em
+
+  @mixin respond($breakpont){
+    @if $breakpont == phone{
+      @media (max-width: 37.5em) {@content}
+    }
+    @if $breakpont == tab-port{
+      @media (max-width: 56.25em) {@content}
+    }
+    @if $breakpont == tab-land{
+      @media (max-width: 75em) {@content}
+    }
+    @if $breakpont == big-desktop{
+      @media (max-width: 112.5em) {@content}
+    }
+  }
+
+
