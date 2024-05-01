@@ -1,1 +1,1 @@
-2024-05-01 V1 make responsive Image
+2024-05-01 V1 make responsive Image and connecting to git
